@@ -1,0 +1,152 @@
+.room {
+    height: 100%;
+    padding-block: 65px 70px;
+
+    @include mobile() {
+        margin-block: 200px 0;
+        padding-block: 113px 48px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        @include media(0, 1024px) {
+            padding-inline: 40px;
+        }
+
+        h2 {
+            @include Heading($Brown-Dark);
+
+            @include mobile() {
+                text-align: center;
+                font-size: 35px;
+                line-height: 40px;
+            }
+        }
+
+        .carousel__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+
+            @include mobile() {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &>p {
+                max-width: 165px;
+                min-width: 165px;
+                @include paragraphStyle();
+
+                @include mobile() {
+                    max-width: none;
+                    min-width: none;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .carousel {
+                max-width: 948px;
+
+                @include media(0px, 1024px){
+                    max-width: 500px;
+                }
+
+                @include mobile() {
+                    max-width: 311px;
+                }
+
+                .mySwiper {
+                    width: 100%;
+
+                    .slide__box {
+                        position: relative;
+                        width: 455px;
+                        height: 350px;
+                        display: flex;
+
+                        @include mobile() {
+                            width: 100%;
+                            height: 232px;
+                        }
+
+                        img {
+                            max-width: 60%;
+                        }
+
+                        &-info {
+                            max-width: 40%;
+                            padding-left: 32px;
+
+                            @include mobile() {
+                                padding-left: 16px;
+                            }
+
+                            h3 {
+                                @include paragraphStyle;
+                            }
+                        }
+
+                        .slide__title {
+                            width: 100%;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            h2 {
+                                @include Heading($Terracotta);
+                                letter-spacing: normal;
+
+                                @include mobile() {
+                                    font-size: 35px;
+                                    line-height: 40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .carousel__controls {
+            display: flex;
+            align-items: center;
+            gap: 160px;
+
+            @include mobile() {
+                justify-content: space-between;
+            }
+
+            .carousel__next-btn {
+                color: $Terracotta;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 25px;
+                letter-spacing: 0.3px;
+
+                width: 70px;
+                background-image: url('../assets/images/arrow__icon.svg');
+                background-repeat: no-repeat;
+                background-position: right center;
+            }
+
+            .carousel__count {
+                width: auto;
+                user-select: none;
+
+                @include paragraphStyle;
+            }
+        }
+
+    }
+}

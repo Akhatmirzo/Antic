@@ -1,0 +1,152 @@
+.hero {
+    position: relative;
+    height: 100vh;
+
+    @include mobile() {
+        height: 60vh;
+    }
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include media(0px, 1024px) {
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            padding-inline: 40px;
+        }
+
+        @include mobile() {
+            padding-inline: 25px;
+        }
+    }
+
+    &__content {
+        max-width: 380px;
+        margin-top: 100px;
+        z-index: 10;
+
+        @include media(0px, 1024px) {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        span {
+            color: $Terracotta;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 1px;
+
+            @include media(0px, 1024px) {
+                color: white;
+                text-align: center;
+            }
+        }
+
+        h2 {
+            @include Heading($Terracotta, 50px);
+            margin: 50px 0 30px;
+
+            @include media(0px, 1024px) {
+                color: white;
+                text-align: center;
+            }
+
+            @include mobile() {
+                font-size: 35px;
+                line-height: 40px;
+                margin: 24px 0;
+            }
+        }
+
+        p {
+            @include paragraphStyle(22px);
+            line-height: 30px;
+            margin-bottom: 48px;
+
+            @include media(0px, 1024px) {
+                color: white;
+                text-align: center;
+            }
+
+            @include mobile() {
+                line-height: 25px;
+                margin-bottom: 24px;
+            }
+        }
+
+        @include media(0px, 1024px) {
+            svg {
+                rect {
+                    stroke: white;
+                }
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    &__image {
+        background-image: url('../assets/images/hero__bg.jpg');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        overflow: hidden;
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100%;
+
+        @include tablet() {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: top -130px center;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.411);
+            }
+        }
+
+        @include mobile() {
+            width: 100%;
+            height: 667px;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.411);
+            }
+        }
+    }
+}

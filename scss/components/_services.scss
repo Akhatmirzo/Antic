@@ -1,0 +1,69 @@
+.services {
+    padding-block: 64px 70px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include media(0px, 1228px) {
+            flex-direction: column;
+        }
+
+        @include mobile() {
+            padding-inline: 20px;
+        }
+    }
+
+    &__title {
+        @include mobile() {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            max-width: 458px;
+            margin-bottom: 30px;
+            @include Heading;
+
+            @include mobile() {
+                font-size: 35px
+            }
+        }
+
+        & .more {
+            @include paragraphStyle(17px, $Terracotta);
+
+            padding-right: 20px;
+            background-image: url('../assets/images/arrow__icon.svg');
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+    }
+
+    &__list {
+        max-width: 550px;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        @include media(0px, 1228px) {
+            max-width: 100%;
+        }
+
+        &-item {
+            max-width: 259px;
+
+            h3 {
+                color: $Terracotta;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-size: 25px;
+                font-weight: 600;
+                line-height: 30px;
+                letter-spacing: -0.2px;
+            }
+
+            p {
+                @include paragraphStyle;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@mixin tablet() {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin media($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin logo($color: $Terracotta) {
+    color: $color;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+@mixin paragraphStyle($size: 18px, $color: $Brown-Light) {
+    color: $color;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: $size;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+@mixin Heading($color: $Brown-Light, $size: 55px) {
+    color: $color;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Merriweather', sans-serif;
+    font-size: $size;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 60px;
+    letter-spacing: -0.6px;
+}

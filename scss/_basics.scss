@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varta', sans-serif;
+    background: #F3EEE8;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 100vh;
+    display: block;
+}
+
+// main {
+//     display: block;
+//     // height: 100vh;
+//     overflow-y: scroll;
+//     scroll-behavior: smooth;
+// }
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
